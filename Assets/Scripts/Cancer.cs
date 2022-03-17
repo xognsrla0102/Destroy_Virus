@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Cancer : Enemy
 {
-    [SerializeField] private float shotInterval;
+    [SerializeField] private float continiousShotInterval;
 
     [HideInInspector] public int wayCnt;
     [HideInInspector] public int shotCnt;
@@ -12,7 +12,7 @@ public class Cancer : Enemy
     {
         base.Start();
         shotCnt = 2;
-        wayCnt = 5;
+        wayCnt = 2;
     }
 
     protected override void Attack()
@@ -25,7 +25,7 @@ public class Cancer : Enemy
         for (int shotCnt = 0; shotCnt < this.shotCnt; shotCnt++)
         {
             N_Way_Shot();
-            yield return new WaitForSeconds(shotInterval);
+            yield return new WaitForSeconds(continiousShotInterval);
         }
     }
 

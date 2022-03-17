@@ -32,6 +32,8 @@ public abstract class Enemy : MonoBehaviour
     {
         if (other.CompareTag("PlayerBullet"))
         {
+            CameraManager.Instance.EnemyHitShake();
+
             SoundManager.Instance.PlaySound(Sound_Effect.HIT);
             Destroy(other.gameObject);
             Instantiate(hitEffect).transform.position = other.transform.position;

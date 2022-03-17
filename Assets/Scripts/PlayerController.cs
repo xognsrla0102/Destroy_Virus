@@ -14,19 +14,25 @@ public class PlayerController : MonoBehaviour
 {
     private const int ROTATION_SPD = 300;
 
+    [Header("플레이어 속성")]
     public int atkLevel;
     public float spd;
     public float atkDmg;
-
     [SerializeField] private float bulletSpd;
     [SerializeField] private float bulletInterval;
     [SerializeField] private Transform firePos;
+
+    [Space(20f)]
     [SerializeField] private Bullet bulletObj;
     [SerializeField] private GameObject hitEffect;
-    [SerializeField] private MoveRange moveRange;
+    [SerializeField] private GameObject hitShield;
 
+    [Header("시점 오브젝트")]
     [SerializeField] private GameObject frontViewCam;
     [SerializeField] private GameObject topViewCam;
+
+    [Header("움직일 수 있는 반경")]
+    [SerializeField] private MoveRange moveRange;
 
     private Rigidbody rb;
 
@@ -39,12 +45,14 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+
         bulletTime = Time.time;
+        hitShield.SetActive(false);
     }
 
     private void Update()
     {
-        #region �� �߻�
+        #region 총 발사
         if (Input.GetKey(KeyCode.Space) && Time.time > bulletTime)
         {
             bulletTime = Time.time + bulletInterval;
@@ -64,7 +72,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        #region ȸ��
+        #region 회전
         float h = Input.GetAxisRaw("Horizontal");
         if (Mathf.Approximately(h, 0))
         {
@@ -82,7 +90,7 @@ public class PlayerController : MonoBehaviour
             rotationZ);
         #endregion
 
-        #region �̵�
+        #region 이동
         Vector3 moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
 
         rb.velocity = moveDir * (Input.GetKey(KeyCode.LeftShift) ? spd / 2 : spd);
@@ -137,8 +145,15 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator HitCoroutine()
     {
+        CameraManager.Instance.DamagedShake();
+
         isAttacked = true;
-        yield return new WaitForSeconds(1.5f);
+        hitShield.SetActive(true);
+        yield return new WaitForSeconds(1f);
+
+        hitShield.SetActive(false);
+        yield return new WaitForSeconds(0.5f);
+
         isAttacked = false;
     }
 
