@@ -1,0 +1,10 @@
+1,bacteria,2
+0,bacteria,4
+0,bacteria,6
+0,bacteria,8
+3,virus,2
+1,virus,6
+3,cancer,2
+0,cancer,4
+0,cancer,6
+0,cancer,8
