@@ -3,6 +3,8 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
+    [SerializeField] protected Transform firePos;
+
     [SerializeField] private GameObject hitEffect;
     [SerializeField] private GameObject dieEffect;
     [SerializeField] protected Bullet bulletObj;

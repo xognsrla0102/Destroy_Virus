@@ -3471,13 +3471,13 @@ MonoBehaviour:
   bulletObj: {fileID: -1448967068493125827, guid: 2d362474d2be9fb4aa78678f389c5a4e, type: 3}
   hitEffect: {fileID: 5944464254675525875, guid: 1de6da77856d154478be817225f505e2, type: 3}
   hitShield: {fileID: 1738501632}
+  frontViewCam: {fileID: 618855268}
+  topViewCam: {fileID: 1651133401}
   moveRange:
     xMin: -80
     xMax: 80
     zMin: -50
     zMax: 25
-  frontViewCam: {fileID: 618855268}
-  topViewCam: {fileID: 1651133401}
 --- !u!54 &1621792254
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4991,8 +4991,8 @@ MonoBehaviour:
   m_ImpulseDefinition:
     m_ImpulseChannel: 1
     m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
-    m_AmplitudeGain: 5
-    m_FrequencyGain: 0.05
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
     m_RepeatMode: 0
     m_Randomize: 1
     m_TimeEnvelope:
@@ -5027,8 +5027,8 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_AttackTime: 0
-      m_SustainTime: 0.2
-      m_DecayTime: 0.3
+      m_SustainTime: 0.025
+      m_DecayTime: 0.025
       m_ScaleWithImpact: 1
       m_HoldForever: 0
     m_ImpactRadius: 100

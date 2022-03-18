@@ -12,7 +12,7 @@ public class Cancer : Enemy
     {
         base.Start();
         shotCnt = 2;
-        wayCnt = 2;
+        wayCnt = 5;
     }
 
     protected override void Attack()
@@ -31,17 +31,33 @@ public class Cancer : Enemy
 
     private void N_Way_Shot()
     {
-        Vector3 playerDir = GameObject.Find("Player").transform.position - transform.position;
-        float rot = Mathf.Rad2Deg * Mathf.Atan2(playerDir.z, playerDir.x);
-        rot -= 15 * wayCnt / 2;
+        firePos.LookAt(GameObject.Find("Player").transform.position);
 
-        for (int wayCnt = 1; wayCnt <= this.wayCnt; wayCnt++)
+        Quaternion firstRotation = firePos.rotation;
+
+        firePos.Rotate(Vector3.up * -5 * (wayCnt / 2));
+
+        for (int i = 1; i <= wayCnt; i++)
         {
-            Vector3 dir = new Vector3(Mathf.Cos(rot * Mathf.Deg2Rad), 0, Mathf.Sin(rot * Mathf.Deg2Rad)).normalized;
             Bullet bullet = Instantiate(bulletObj);
-            bullet.transform.position = transform.position;
-            bullet.SetBullet(atkDmg, dir, bulletSpd);
-            rot += 15;
+            bullet.transform.position = firePos.position;
+            bullet.SetBullet(atkDmg, firePos.forward, bulletSpd);
+            firePos.Rotate(Vector3.up * 5);
         }
+
+        firePos.rotation = firstRotation;
+
+        //Vector3 playerDir = GameObject.Find("Player").transform.position - transform.position;
+        //float rot = Mathf.Rad2Deg * Mathf.Atan2(playerDir.z, playerDir.x);
+        //rot -= 15 * wayCnt / 2;
+        //
+        //for (int wayCnt = 1; wayCnt <= this.wayCnt; wayCnt++)
+        //{
+        //    Vector3 dir = new Vector3(Mathf.Cos(rot * Mathf.Deg2Rad), 0, Mathf.Sin(rot * Mathf.Deg2Rad)).normalized;
+        //    Bullet bullet = Instantiate(bulletObj);
+        //    bullet.transform.position = transform.position;
+        //    bullet.SetBullet(atkDmg, dir, bulletSpd);
+        //    rot += 15;
+        //}
     }
 }
