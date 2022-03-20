@@ -1,10 +1,5 @@
-using UnityEngine;
-
 public class Bacteria : Enemy
 {
-    // ¹ÚÅ×¸®¾Æ´Â °ø°İ ¾øÀ½
-    protected override void Attack()
-    {
-        return;
-    }
+    // ë°•í…Œë¦¬ì•„ëŠ” ê³µê²© ì—†ìŒ
+    protected override void Attack() { return; }
 }

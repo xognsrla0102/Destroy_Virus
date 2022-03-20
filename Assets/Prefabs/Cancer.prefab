@@ -122,8 +122,8 @@ GameObject:
   - component: {fileID: 8285577893424242532}
   - component: {fileID: 7715142555589084212}
   - component: {fileID: -4032425099045749036}
-  - component: {fileID: 1679556976}
   - component: {fileID: 535111631339718426}
+  - component: {fileID: 1679556976}
   m_Layer: 0
   m_Name: Cancer
   m_TagString: Enemy
@@ -182,30 +182,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1679556976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8285577893424242533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc4f78287c0261d458e0ffabcce34d7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePos: {fileID: 729194143388320041}
-  hitEffect: {fileID: 5944464254675525875, guid: 1de6da77856d154478be817225f505e2, type: 3}
-  dieEffect: {fileID: 683982480767770230, guid: 8ab2f75fcf432ac4ea7e6e26d09f1cb2, type: 3}
-  bulletObj: {fileID: 5234097190531760889, guid: 287d595202647a34c87fb371aece3f01, type: 3}
-  spd: 30
-  hp: 100
-  atkDmg: 10
-  bulletSpd: 50
-  bulletInterval: 2
-  continiousShotInterval: 0.5
-  wayCnt: 0
-  shotCnt: 0
 --- !u!135 &535111631339718426
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -219,3 +195,28 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1679556976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8285577893424242533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc4f78287c0261d458e0ffabcce34d7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spd: 30
+  hp: 100
+  atkDmg: 50
+  firePos: {fileID: 729194143388320041}
+  bulletObj: {fileID: 5234097190531760889, guid: 287d595202647a34c87fb371aece3f01, type: 3}
+  bulletSpd: 50
+  bulletInterval: 2
+  isUnlimitShotcnt: 1
+  shotCnt: 0
+  continiousShotInterval: 0.3
+  wayCnt: 5
+  hitEffect: {fileID: 5944464254675525875, guid: 1de6da77856d154478be817225f505e2, type: 3}
+  dieEffect: {fileID: 683982480767770230, guid: 8ab2f75fcf432ac4ea7e6e26d09f1cb2, type: 3}

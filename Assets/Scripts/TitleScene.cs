@@ -18,10 +18,10 @@ public class TitleScene : MonoBehaviour
         start_pd.Play();
     }
 
-    // start_pd ¾Ö´Ï¸ŞÀÌ¼Ç¿¡¼­ ÀÌº¥Æ®·Î È£ÃâÇÔ
+    // start_pd ì• ë‹ˆë©”ì´ì…˜ì—ì„œ ì´ë²¤íŠ¸ë¡œ í˜¸ì¶œí•¨
     public void MoveIngameScene()
     {
-        SceneManager.LoadScene("InGame");
+        SceneManager.LoadScene("InGame1");
     }
 
     public void OnClickRankButton()

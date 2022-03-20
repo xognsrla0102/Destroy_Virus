@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour
         set
         {
             health = value;
-            healthText.text = $"Ã¼·Â °ÔÀÌÁö : {health}%";
+            healthText.text = $"ì²´ë ¥ ê²Œì´ì§€ : {health}%";
         }
     }
     private float pain;
@@ -34,7 +35,7 @@ public class GameManager : MonoBehaviour
         set
         {
             pain = value;
-            painText.text = $"°íÅë °ÔÀÌÁö : {pain}%";
+            painText.text = $"ê³ í†µ ê²Œì´ì§€ : {pain}%";
         }
     }
     private int score;
@@ -44,7 +45,7 @@ public class GameManager : MonoBehaviour
         set
         {
             score = value;
-            scoreText.text = $"Á¡¼ö : {score}";
+            scoreText.text = $"ì ìˆ˜ : {score}";
         }
     }
 
@@ -71,13 +72,8 @@ public class GameManager : MonoBehaviour
             Resources.Load<TextAsset>($"Stage{stageNum}_EnemyData").text);
     }
 
-    private void Update()
-    {
-        
-    }
-
     public void GameOver()
     {
-
+        SceneManager.LoadScene("Ranking");
     }
 }

@@ -410,14 +410,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c143c3b0d3560a46ad240cc806a28dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitEffect: {fileID: 5944464254675525875, guid: 1de6da77856d154478be817225f505e2, type: 3}
-  dieEffect: {fileID: 683982480767770230, guid: 8ab2f75fcf432ac4ea7e6e26d09f1cb2, type: 3}
-  bulletObj: {fileID: 0}
   spd: 50
   hp: 100
   atkDmg: 10
+  firePos: {fileID: 0}
+  bulletObj: {fileID: 0}
   bulletSpd: 0
   bulletInterval: 0
+  shotCnt: 0
+  continiousShotInterval: 0
+  wayCnt: 0
+  hitEffect: {fileID: 5944464254675525875, guid: 1de6da77856d154478be817225f505e2, type: 3}
+  dieEffect: {fileID: 683982480767770230, guid: 8ab2f75fcf432ac4ea7e6e26d09f1cb2, type: 3}
 --- !u!136 &6548568942852596470
 CapsuleCollider:
   m_ObjectHideFlags: 0

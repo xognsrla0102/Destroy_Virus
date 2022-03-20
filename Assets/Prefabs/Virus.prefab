@@ -8722,15 +8722,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af34bf7ddcfab2c4a8441cb1c0a97f99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePos: {fileID: 2988066758545016539}
-  hitEffect: {fileID: 5944464254675525875, guid: 1de6da77856d154478be817225f505e2, type: 3}
-  dieEffect: {fileID: 683982480767770230, guid: 8ab2f75fcf432ac4ea7e6e26d09f1cb2, type: 3}
-  bulletObj: {fileID: 5234097190531760889, guid: 287d595202647a34c87fb371aece3f01, type: 3}
   spd: 20
   hp: 100
   atkDmg: 10
+  firePos: {fileID: 2988066758545016539}
+  bulletObj: {fileID: 5234097190531760889, guid: 287d595202647a34c87fb371aece3f01, type: 3}
   bulletSpd: 50
   bulletInterval: 2
+  shotCnt: 0
+  continiousShotInterval: 0.5
+  wayCnt: 3
+  hitEffect: {fileID: 5944464254675525875, guid: 1de6da77856d154478be817225f505e2, type: 3}
+  dieEffect: {fileID: 683982480767770230, guid: 8ab2f75fcf432ac4ea7e6e26d09f1cb2, type: 3}
 --- !u!135 &5875641268498822264
 SphereCollider:
   m_ObjectHideFlags: 0
